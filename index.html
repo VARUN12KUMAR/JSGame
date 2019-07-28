@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Game Js</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<div id="container">
+	<div id="score">
+		Score:<span id="Scoreid">0</span>
+	</div>
+	<center><div id="correct"> Correct</div></center>
+	<div id="Wrong">Try Again</div>
+	<div id ="quest"></div>
+	<div id="inst">Choose the correct answer</div> 
+	<div id="choice">
+		<div id="box1" class="box"></div>
+		<div id="box2" class="box"></div>
+		<div id="box3" class="box"></div>
+		<div id="box4" class="box"></div>
+	 </div>
+	 <div id="result">Start Game </div>
+	 	<div id="Time"> Time remaining: <span id="Timeremaining">60</span>sec</div>
+	 	<div id="gameOver"> 
+	 		<p>Game Over</p>
+	 		<p>Your sacore is is:20</p>
+	 	</div>
+	 
+
+	</div>
+	<!-- <script src="C:\Users\varun\Desktop\Game/java.js"> -->
+		<script>
+		var playing=false;  
+var score;
+var action;
+var timeremaining;
+var correctAnswer;
+document.getElementById("result").onclick=function() {
+  	// body...
+  	if(playing==true){
+  		location.reload();  
+
+  	}
+  	else{
+  		playing=true;
+  		score=0;
+document.getElementById("Scoreid").innerHTML=score; 
+show("Time");
+timeremaining=60;
+  document.getElementById("Timeremaining").innerHTML=timeremaining;
+    hide("gameOver");    
+
+document.getElementById("result").innerHTML="Reset Game"; 
+startCountdown();
+genrateQuest();
+
+ 
+ 
+  	} 
+  } 
+  for(i=1;i<5;i++){
+  	  document.getElementById("box"+i).onclick=function(){
+
+  	if(playing==true){
+  		if(this.innerHTML==correctAnswer){
+  			score++;
+  			document.getElementById("Scoreid").innerHTML=score;
+  			hide("Wrong");
+  			show("correct");
+  			setTimeout(function(){
+  				hide("correct");
+
+  			},1000);
+  			genrateQuest();
+
+  		}else{
+  				show("Wrong");
+  			hide("correct");
+  			setTimeout(function(){
+  				hide("Wrong");
+
+  			},1000);
+
+
+  		}
+  	}
+  }
+  } 
+
+
+
+
+  function startCountdown(){
+  	action=setInterval(function(){
+  		timeremaining-=1;
+  		document.getElementById("Timeremaining").innerHTML=timeremaining;
+  		if(timeremaining==0){
+  			stopCountdown();
+  			show("gameOver");
+
+  			document.getElementById("gameOver").innerHTML="<p>Game Over!</p><p>Your Score is"+score+"</p>";
+  			hide("Time");
+  			hide("correct");
+  			hide("Wrong");
+  			playing=false;
+  			document.getElementById('result').innerHTML="Start Game";
+  		
+
+
+
+  		}
+
+
+  	},1000);
+  }
+  function stopCountdown(){
+  			clearInterval(action);
+
+  }
+  function hide(id){
+  	document.getElementById(id).style.display="none";
+  } 
+ function show(id){
+  	document.getElementById(id).style.display="block";
+  } 
+  function genrateQuest(){
+  	var X=1+ Math.round(9*Math.random());
+  	var Y=1+ Math.round(9*Math.random()); 
+  	correctAnswer=X*Y;
+  	document.getElementById("quest").innerHTML=X+"X"+Y;
+  	var correctPosition=1+Math.round(3*Math.random());
+  	
+  	document.getElementById("box"+correctPosition).innerHTML=correctAnswer;
+  	var answers=[correctAnswer];
+  	for(i=1;i<5;i++){
+  		if(i!=correctPosition){
+  			var wrongAnswer;
+  			do{
+  					wrongAnswer=(1+ Math.round(9*Math.random()))*(1+ Math.round(9*Math.random()));
+
+  			}
+  			while(answers.indexOf(wrongAnswer)>-1){
+
+
+  			}
+  			document.getElementById("box"+i).innerHTML=wrongAnswer;
+  			answers.push(wrongAnswer);
+  		}
+  	}
+
+
+
+
+  }
+ 
+	</script> 
+
+</body>
+</html>

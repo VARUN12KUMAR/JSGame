@@ -1,0 +1,174 @@
+html{
+	height: 100%;
+	background: radial-gradient(circle,#fff,#ccc);
+}
+#container{
+	 height: 500px;
+	 width:40;
+	 background-color: #9DD2EA;
+	 margin: 200px;
+	 margin-top: 100px
+	  margin-left: 100px;
+	  padding: 10px;
+	  border-radius: 10px;
+	  box-shadow: 4px 4px 0px 0px #009de4
+	  position:relative;
+
+}
+#score{
+	background-color: #F1FF92;
+	color: #000F5F;
+	padding: 10px;
+	position: absolute;
+	left:1000px;
+	box-shadow: 0px 4px 0px #9 
+}
+#correct{
+	position:absolute;
+	background-color: green;  
+	left:415px;
+	color: white;
+	padding: 11px;
+	box-shadow: 0px 4px 0px #9da853;
+	display:none;
+
+}
+#Wrong{ 
+	position:absolute;
+	background-color:red;  
+	left: 415px;
+	color: white;
+	padding: 11px;
+	float: center;
+	display: none;
+
+}
+#quest{
+	width: 450px; 
+	height: 170px;
+	border: 0px 4px 0px #9da853;
+	margin: 53px auto 10px auto;
+	background-color:#9DA0EA; 
+	box-shadow: 0px 4px #535aa0;
+	font-size: 100px;
+	text-align: center;
+	font-family: cursive,sans-selfie;
+	color: black;
+	
+
+}
+#inst{
+	width: 450px; 
+	height: 50px;
+	background-color: #B481D9;  
+	margin-left: 232px;
+	box-shadow: 4px 4px 4px #535aa0;
+	font-size: 40px;
+	text-align: center;
+	color: white;
+
+
+
+}
+#choice{
+	width: 450px; 
+	height: 200px;
+	margin-left: 232px;
+	margin-top: 20px;
+
+
+}
+.box{
+	width: 90px;
+	height: 90px;
+	background-color: white;
+	float: left;
+	margin-right: 22px;
+	border-radius: 3px;
+	cursor: pointer;
+	box-shadow: 0px 4px rgba(0,0,0,2);
+	text-align: center;
+	line-height: 80px;
+}
+#box1:hover{
+
+	background-color: #ed3d7e;
+	color: white;
+    box-shadow: 0px 2px 0px #e6ebef;
+
+}
+#box2:hover{
+
+	background-color: #ed9a36;
+	color: white;
+    box-shadow: 0px 2px 0px #e6ebef;
+
+}
+#box3:hover{
+
+	background-color: #6753e8;
+	color: white;
+    box-shadow: 0px 2px 0px #e6ebef;
+
+}
+#box4:hover{
+
+	background-color: #d850ed;
+	color: white;
+    box-shadow: 0px 2px 0px #e6ebef;
+
+}
+#result{
+	width: 100px; 
+	height: 50px;
+	margin-left: 232px;
+	background-color:#fca832; 
+	margin-top: -90px;
+	font-size: 15px;
+	text-align: center;
+	line-height: 45px;
+	border-radius: 10px;
+	color: white;
+	cursor: pointer;
+	box-shadow: 0px 2px 0px #e5bd0b; 
+
+}
+#result:hover{
+	background-color:#f45e4e;
+	color: #605756; 
+	box-shadow: 0px 2px 0px #e6ebef;
+}
+#Time{
+	width: 180px; 
+	height: 50px;
+	margin-left: 500px;
+	background-color:#fca832;
+	margin-top: -50px; 
+	float: left; 
+	border-radius: 10px;
+	box-shadow: 0px 2px 0px #e5bd0b; 
+	line-height: 45px;
+	text-align: center;
+	color: white;
+	display: none;
+
+}
+#Time:hover{
+	background-color:#89f740;
+	color: #43a9f2;
+	box-shadow: 0px 2px 0px #e6ebef;
+}
+#gameOver{
+	height: 200px;
+	width:600px;
+	background: linear-gradient(#F3CA6B,#F3706C);
+	font-size:2.5em;
+	text-align: center;
+	color: white;
+	position: absolute;
+	margin-top: -300px;
+	margin-left: 150px;
+	display: none;
+	z-index: 2;
+
+}
